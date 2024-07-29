@@ -1,0 +1,38 @@
+import java.util.*;
+class Node {
+    int data;
+    Node next;
+}
+public class Main {
+    static Node head;
+    static void create(int d) {
+        Node newnode,temp;
+        temp=head;
+        if(head==null){
+            head = new Node();
+            head.data = d;
+            head.next = null;
+        }
+        
+        else{
+            newnode = new Node();
+            newnode.data = d;
+            newnode.next = null;
+            temp.next=newnode;
+            temp=temp.next;
+        }
+    }
+    static void display() {
+        if(head==null) {
+            System.out.println("Memory does not created");
+        }
+        else {
+            System.out.println(head.data+" ");
+        }
+    }
+	public static void main(String[] args) {
+	    create(4);
+	    create(8);
+	    display();
+	}
+}
